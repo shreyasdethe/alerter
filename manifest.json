@@ -1,0 +1,19 @@
+{
+    "name": "Alerter",
+    "description": "Get timely alerts on things you want!",
+    "version": "0.1",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": [
+        "storage",
+        "scripting",
+        "notifications",
+        "alarms"
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "bell.png"
+    }
+}
