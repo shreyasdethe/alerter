@@ -13,7 +13,7 @@
         "alarms"
     ],
     "action": {
-        "default_popup": "popup.html",
-        "default_icon": "bell.png"
+        "default_popup": "assets/popup.html",
+        "default_icon": "assets/bell.png"
     }
 }

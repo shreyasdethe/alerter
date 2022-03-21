@@ -2,8 +2,14 @@ chrome.runtime.onInstalled.addListener(() => {
     console.log("Install complete");
 });
 
-chrome.runtime.onMessage.addListener(data => {
-    if (data.type === "alarm") {
-        chrome.notifications.create("alert", data.options);
-    }
+
+chrome.alarms.onAlarm.addListener(alarm => {
+    chrome.notifications.create(
+        "", {
+        type: "basic",
+        iconUrl: "bell.png",
+        title: alarm.name,
+        message: `This is your reminder to ${alarm.name}`,
+        priority: 2
+    });
 });

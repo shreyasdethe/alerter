@@ -32,23 +32,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (!isRunning) {
             // Create an alarm here
-            chrome.alarms.create("SINGULAR_ALARM", {
+            chrome.alarms.create(alarmTextField.value, {
                 periodInMinutes: parseInt(alarmTimeField.value)
-            });
-
-            chrome.alarms.onAlarm.addListener(alarm => {
-                if (alarm.name === "SINGULAR_ALARM") {
-                    chrome.runtime.sendMessage({
-                        type: "alarm",
-                        options: {
-                            type: "basic",
-                            iconUrl: "bell.png",
-                            title: alarmTextField.value,
-                            message: `This is your reminder to ${alarmTextField.value}`,
-                            priority: 2
-                        }
-                    }, () => { });
-                }
             });
 
             isRunning = true;
@@ -58,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // save running state to false
             chrome.storage.sync.set({ "isAlarmRunning": false });
             // Destroy the created alarm here
-            chrome.alarms.clear("SINGULAR_ALARM", () => {
+            chrome.alarms.clear(alarmTextField.value, () => {
                 // callback when alarm cleared
             });
 
