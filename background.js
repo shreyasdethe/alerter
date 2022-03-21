@@ -7,7 +7,7 @@ chrome.alarms.onAlarm.addListener(alarm => {
     chrome.notifications.create(
         "", {
         type: "basic",
-        iconUrl: "bell.png",
+        iconUrl: "assets/bell.png",
         title: alarm.name,
         message: `This is your reminder to ${alarm.name}`,
         priority: 2
