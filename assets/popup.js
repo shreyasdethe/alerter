@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    document.body.style.backgroundColor = "#88d3b0";
+    // document.body.style.backgroundColor = "#88d3b0";
     let errorText = document.getElementById("errorText");
 
     // Set default values for the text fields
